@@ -26,4 +26,7 @@ public class CounterServlet extends HttpServlet {
         PrintWriter out = res.getWriter();
         out.println("<h1> The page count is: " + count);
     }
+
+    //For the BONUS exercise, in the URL add text /count?reset
+
 }
