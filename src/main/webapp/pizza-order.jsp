@@ -11,7 +11,7 @@
     <title>Pizza Form</title>
 </head>
 <body>
-<form method="POST" action="/pizza-order">
+<form method="POST" action="pizza-order">
 
     <label for="crust-type">Crust</label>
     <select name="crust-type" id="crust-type">
@@ -23,9 +23,9 @@
 
     <label for="sauce-type">Sauce</label>
     <select name="sauce-type" id="sauce-type">
-        <option value="Sauce 1">1</option>
-        <option value="Sauce 2">2</option>
-        <option value="Sauce 3">3</option>
+        <option value="Sauce 1">Sauce 1</option>
+        <option value="Sauce 2">Sauce 2</option>
+        <option value="Sauce 3">Sauce 3</option>
     </select>
     <br>
 
