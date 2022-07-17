@@ -37,6 +37,15 @@
     </select>
     <br>
 
+    <h3>Toppings</h3>
+    <input type="checkbox" name="toppings" value="pepperoni">Pepperoni<br>
+    <input type="checkbox" name="toppings" value="sausage">Sausage<br>
+    <input type="checkbox" name="toppings" value="mushrooms">Mushrooms<br>
+    <input type="checkbox" name="toppings" value="pineapple">Pineapple<br>
+
+    <input type="text" name="address" placeholder="Enter your address">
+
+
     <input type="submit">
 </form>
 </body>

@@ -18,6 +18,9 @@ public class PizzaOrderServlet extends HttpServlet {
         response.getWriter().println(request.getParameter("crust-type"));
         response.getWriter().println(request.getParameter("sauce-type"));
         response.getWriter().println(request.getParameter("size-type"));
+        response.getWriter().println(request.getParameter("toppings"));
+        response.getWriter().println(request.getParameter("address"));
+
 
     }
 
