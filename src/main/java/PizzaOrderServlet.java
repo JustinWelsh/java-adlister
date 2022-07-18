@@ -10,7 +10,6 @@ import java.io.IOException;
 public class PizzaOrderServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse  response) throws IOException, ServletException {
-//        response.getWriter().println("<h1>Hello From Pizza-Order.jsp</h1>");
         request.getRequestDispatcher("/pizza-order.jsp").forward(request, response);
     }
 
