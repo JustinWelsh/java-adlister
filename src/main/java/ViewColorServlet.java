@@ -7,11 +7,11 @@ import java.io.IOException;
 
 @WebServlet(name = "ViewColorServlet", urlPatterns = "/viewcolor")
 public class ViewColorServlet extends HttpServlet {
-//    @Override
-//    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-//        String color = req.getParameter("color");
-//        System.out.println(color);
-//        req.setAttribute("color", color);
-//        req.getRequestDispatcher("/WEB-INF/viewcolor.jsp").forward(req, resp);
-//    }
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        String color = req.getParameter("color-select");
+        System.out.println(color);
+        req.setAttribute("color", color);
+        req.getRequestDispatcher("/WEB-INF/viewcolor.jsp").forward(req, resp);
+    }
 }

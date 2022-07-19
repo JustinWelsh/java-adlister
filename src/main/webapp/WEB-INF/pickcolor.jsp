@@ -13,7 +13,8 @@
 <body>
 <form method="POST" action="pickcolor">
 
-    <label for="color-select">Input a color?</label>
+    <label for="color-select">Input a color you want to change the background to.</label>
+    <br>
     <input id="color-select" name="color-select" type="text">
     <br>
 

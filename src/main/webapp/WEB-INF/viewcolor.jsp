@@ -10,24 +10,6 @@
 <html>
 <head>
     <title>View Color</title>
-</head>
-<body style="background: <%=
-    request.getParameter("color-select")
-    %>">
-<p>
-    <%=
-    request.getParameter("color-select")
-    %>
-</p>
-</body>
-</html>
-
-
-<%--INSTRUCTOR SOLUTION--%>
-
-<%--<html>
-<head>
-    <title>View Color</title>
     <style>
         body {
             background: ${param.color}
@@ -35,6 +17,29 @@
     </style>
 </head>
 <body>
-<h1>Here's the color</h1>
+<%--<p>You Chose: <%=request.getParameter("color-select")%></p>--%>
+
+<p>You Chose: ${param.color}</p>
+
+
 </body>
-</html>--%>
+</html>
+
+
+<%--INSTRUCTOR SOLUTION--%>
+
+<%--
+    <html>
+    <head>
+        <title>View Color</title>
+        <style>
+            body {
+                background: ${param.color}
+            }
+        </style>
+    </head>
+    <body>
+    <h1>Here's the color</h1>
+    </body>
+    </html>
+--%>
