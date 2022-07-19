@@ -7,7 +7,7 @@ import java.io.IOException;
 import java.util.List;
 
 @WebServlet(name = "ShowAdsServlet", urlPatterns = "/ads")
-public class ShowAdsServlet extends HttpServlet {
+public class  ShowAdsServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
