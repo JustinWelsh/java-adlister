@@ -1,0 +1,27 @@
+EXERCISE:
+
+        Checkout the sessions-and-cookies tag.
+
+        git checkout sessions-and-cookies
+        git checkout -b sessions-and-cookies-exercise
+
+---------------------------------
+1. Lock down your profile page
+    -Ensure that users can only visit the /profile page if they are logged in
+    -In your LoginServlet, when a user successfully logs in, set a key named "user" in the session
+    -Use this key to redirect unauthorized users that try to visit the /profile page
+    -If a user is already logged in and they visit /login, instead redirect them to their profile page
+
+2. Allow users to logout
+
+    When a user visits /logout, they should be logged out of your application and redirected to the login page.
+
+3. Add a message on your profile page that welcomes the currently logged in user
+
+=================================================================
+NOTES:
+Servlets used:
+    Login, Logout, ViewProfile
+
+JSPs used
+    profile.jsp
