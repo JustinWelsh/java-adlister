@@ -1,5 +1,4 @@
 USE adlister_db;
-
 CREATE TABLE users (
     id INT UNSIGNED NOT NULL AUTO_INCREMENT,
     username VARCHAR(50),
@@ -7,7 +6,6 @@ CREATE TABLE users (
     password VARCHAR(50) NOT NULL,
     PRIMARY KEY (id)
 );
-
 CREATE TABLE ads (
     id INT UNSIGNED NOT NULL AUTO_INCREMENT,
     user_id INT UNSIGNED NOT NULL ,
