@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.Date;
 
 public class Album implements Serializable {
+//    FIELDS
     private long id;
     private Artist artist;
     private String name;
@@ -11,10 +12,10 @@ public class Album implements Serializable {
     private double sales;
     private String genre;
 
-
+//  EMPTY CONSTRUCTOR
     public Album() {
     }
-
+//  FULL CONSTRUCTOR
     public Album(long id, Artist artist, String name, Date releaseDate, double sales, String genre) {
         this.id = id;
         this.artist = artist;
@@ -23,7 +24,7 @@ public class Album implements Serializable {
         this.sales = sales;
         this.genre = genre;
     }
-
+//  CONSTRUCTOR w/id.
     public Album(Artist artist, String name, Date releaseDate, double sales, String genre) {
         this.artist = artist;
         this.name = name;
@@ -32,6 +33,7 @@ public class Album implements Serializable {
         this.genre = genre;
     }
 
+//    GETTERS and SETTERS
     public long getId() {
         return id;
     }
