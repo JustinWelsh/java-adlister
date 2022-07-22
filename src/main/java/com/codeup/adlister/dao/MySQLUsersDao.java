@@ -9,18 +9,19 @@ import java.sql.*;
 //#2.0 Create an implementation for the Users interface
 //#2.1 Create a class named MySQLUsersDao that implements Users.
 public class MySQLUsersDao implements Users {
-    private Connection connection = null;
+    private Connection conn = null;
 
     public MySQLUsersDao(Config config) {
-        try {
-            DriverManager.registerDriver(new Driver());
-            connection = DriverManager.getConnection(
-                    config.getUrl(),
-                    config.getUser(),
-                    config.getPassword()
-            );
-        } catch (SQLException e) {
-            throw new RuntimeException("Error connecting to the database!", e);
+        if (conn == null) {
+            try {
+                DriverManager.registerDriver(new Driver());
+                conn = DriverManager.getConnection(
+                        config.getUrl(),
+                        config.getUser(),
+                        config.getPassword()
+                );
+            } catch (SQLException e) {
+                throw new RuntimeException("Error connecting to the database!", e);            }
         }
     }
 
@@ -28,8 +29,8 @@ public class MySQLUsersDao implements Users {
     public User findByUsername(String username) {
         String sql = "SELECT * FROM users WHERE username = ?";
         try {
-            PreparedStatement stmt = connection.prepareStatement(sql);
-            stmt.setString(1,username);
+            PreparedStatement stmt = conn.prepareStatement(sql);
+            stmt.setString(1, username);
             ResultSet rs = stmt.executeQuery();
             rs.next();
             return new User(rs.getLong("id"), rs.getString("username"), rs.getString("email"), rs.getString("password"));
@@ -43,21 +44,19 @@ public class MySQLUsersDao implements Users {
     public Long insert(User user) {
         String sql = "INSERT INTO users (username, email, password) VALUES (?, ?, ?)";
         PreparedStatement stmt;
-
-
         try {
-           stmt = connection.prepareStatement(createInsertUserQuery(), Statement.RETURN_GENERATED_KEYS);
+            stmt = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
             stmt.setString(1, user.getUsername());
             stmt.setString(2, user.getEmail());
             stmt.setString(3, user.getPassword());
-
             stmt.executeUpdate();
             ResultSet rs = stmt.getGeneratedKeys();
             rs.next();
             return rs.getLong(1);
         } catch (SQLException e) {
-            throw new RuntimeException("Error creating a new ad.", e);
+            e.printStackTrace();
         }
+        return -1L;
     }
 
     private String createInsertUserQuery() {
