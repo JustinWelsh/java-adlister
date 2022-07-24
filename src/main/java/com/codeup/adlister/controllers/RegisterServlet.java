@@ -2,6 +2,7 @@ package com.codeup.adlister.controllers;
 
 import com.codeup.adlister.dao.DaoFactory;
 import com.codeup.adlister.models.User;
+import com.codeup.adlister.util.Password; //Line 41
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -32,9 +33,13 @@ public class RegisterServlet extends HttpServlet {
             response.sendRedirect("/register");
             return;
         }
-
-        // create and save a new user
+        // TODO: create and save a new user
+        /*OLD
         User user = new User(username, email, password);
+
+        REFACTORED*/
+        User user = new User(username, email, Password.hash(password)); // BCrypt.hashpw(password, BCrypt.gensalt(1100));
+
         DaoFactory.getUsersDao().insert(user);
         response.sendRedirect("/login");
     }

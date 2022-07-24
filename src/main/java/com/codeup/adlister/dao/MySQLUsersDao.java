@@ -1,4 +1,7 @@
 package com.codeup.adlister.dao;
+import com.codeup.adlister.Config;
+
+// ^^ Why does this import not work?? It is used in the walk-through but isn't even an option when hovering over the "Config" object param..
 
 import com.codeup.adlister.models.User;
 import com.mysql.cj.jdbc.Driver;
